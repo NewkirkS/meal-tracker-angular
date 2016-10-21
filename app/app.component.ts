@@ -19,7 +19,6 @@ export class AppComponent {
 
   addMeal(newMealFromChild: Meal) {
     this.masterMealList.push(newMealFromChild);
-    console.log(this.masterMealList);
   }
 
   consoleLog() {

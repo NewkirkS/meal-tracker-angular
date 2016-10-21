@@ -17,13 +17,13 @@ import { Meal } from "./meal.model";
         <label for="details">Details:</label>
         <input class="form-control" type="text" #newDetails>
       </div>
-      <button class="btn btn-success" (click)="
-        addClicked(newName.value, newCalories.value, newDetails.value);
-        newName.value='';
-        newCalories.value='';
-        newDetails.value='';
-      ">Add Meal</button>
     </form>
+    <button class="btn btn-success" (click)="
+      addClicked(newName.value, newCalories.value, newDetails.value);
+      newName.value='';
+      newCalories.value=null;
+      newDetails.value='';
+    ">Add Meal</button>
   `
 })
 
