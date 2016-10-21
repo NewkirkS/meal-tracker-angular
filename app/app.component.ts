@@ -10,10 +10,10 @@ import { Meal } from './meal.model'
       (newMealSender)="addMeal($event)"
     ></new-meal>
     <button (click)="consoleLog()">Console</button>
-    <edit-task
-        [childSelectedMeal]="selectedMeal"
+    <edit-meal
+        [childSelectedMeal]="masterSelectedMeal"
         (finishedEditingSender)="finishedEditing()"
-      ></edit-task>
+      ></edit-meal>
     <meal-list
       [childMealList]="masterMealList"
       (editSender)="showEdit($event)"
@@ -25,19 +25,18 @@ import { Meal } from './meal.model'
 export class AppComponent {
   public masterMealList: Meal[] = [
     new Meal("Breakfast", 100, "2 Eggs"),
-    new Meal("Breakfast", 100, "2 Eggs"),
     new Meal("Lunch", 300, "Mac and Cheese"),
     new Meal("Dinner", 600, "Stir Fry")
   ];
 
-  selectedMeal: Meal = null;
+  public masterSelectedMeal: Meal = null;
 
   showEdit(clickedMeal: Meal) {
-    this.selectedMeal = clickedMeal;
+    this.masterSelectedMeal = clickedMeal;
   }
 
   finishedEditing() {
-    this.selectedMeal = null;
+    this.masterSelectedMeal = null;
   }
 
   addMeal(newMealFromChild: Meal) {
@@ -45,6 +44,6 @@ export class AppComponent {
   }
 
   consoleLog() {
-    console.log(this.masterMealList);
+    console.log(this.masterSelectedMeal);
   }
 }

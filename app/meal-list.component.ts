@@ -9,7 +9,7 @@ import { Meal } from "./meal.model";
       <h4>{{meal.name}}</h4>
       <p>Calories: {{meal.calories}}</p>
       <p>Details: {{meal.details}}</p>
-      <button (click)="editClicked(currentMeal)">Edit</button>
+      <button (click)="editClicked(meal)">Edit</button>
     </div>
   `
 })
