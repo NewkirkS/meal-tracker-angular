@@ -5,13 +5,13 @@ import { Meal } from "./meal.model";
   selector: "meal-list",
   template: `
     <div>
-      <select (change)="onChange($event.target.value)">
+      <select class="form-control" (change)="onChange($event.target.value)">
         <option value="all">Show All</option>
         <option value="high">High-Calorie Meals</option>
         <option value="low">Low-Calorie Meals</option>
       </select>
     </div>
-    <div *ngFor="let meal of childMealList">
+    <div *ngFor="let meal of childMealList | calories:selectedCalories">
       <hr>
       <h4>{{meal.name}}</h4>
       <p>Calories: {{meal.calories}}</p>
@@ -25,7 +25,14 @@ export class MealListComponent {
   @Input() childMealList: Meal[];
   @Output() editSender = new EventEmitter();
 
+  public selectedCalories: string = "all";
+
   editClicked(mealToEdit: Meal) {
     this.editSender.emit(mealToEdit);
+  }
+
+  onChange(option) {
+    this.selectedCalories = option;
+    console.log(this.selectedCalories);
   }
 }
