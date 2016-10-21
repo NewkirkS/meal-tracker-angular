@@ -1,1 +1,45 @@
+header {
+  text-align: center;
+  h1{
+    font-size: 80px;
+    font-family: 'Fredericka the Great', cursive;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
 
+body {
+  font-family: 'Amatic SC', cursive;
+  font-size: 20px;
+}
+
+option {
+  font-size: 20px;
+}
+
+button {
+    font-size: 30px;
+}
+
+#new-meal-div {
+  margin-bottom: 50px;
+  h3 {
+    font-family: 'Fredericka the Great', cursive;
+  }
+}
+
+#edit-meal-div {
+  margin-bottom: 50px;
+  h3 {
+    font-family: 'Fredericka the Great', cursive;
+  }
+
+}
+
+#list-meal-div {
+  margin-bottom: 50px;
+  text-align: center;
+  h4 {
+    font-family: 'Fredericka the Great', cursive;
+  }
+}

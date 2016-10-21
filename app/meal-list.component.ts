@@ -16,7 +16,7 @@ import { Meal } from "./meal.model";
       <h4>{{meal.name}}</h4>
       <p>Calories: {{meal.calories}}</p>
       <p>Details: {{meal.details}}</p>
-      <button (click)="editClicked(meal)">Edit</button>
+      <button class="btn" (click)="editClicked(meal)">Edit</button>
     </div>
   `
 })
@@ -33,6 +33,5 @@ export class MealListComponent {
 
   onChange(option) {
     this.selectedCalories = option;
-    console.log(this.selectedCalories);
   }
 }

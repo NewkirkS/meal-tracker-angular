@@ -5,19 +5,38 @@ import { Meal } from './meal.model'
   selector: 'my-app',
   template: `
   <div class="container">
+    <header>
     <h1>Meal Tracker</h1>
-    <new-meal
-      (newMealSender)="addMeal($event)"
-    ></new-meal>
-    <button (click)="consoleLog()">Console</button>
-    <edit-meal
-        [childSelectedMeal]="masterSelectedMeal"
-        (finishedEditingSender)="finishedEditing()"
-      ></edit-meal>
-    <meal-list
-      [childMealList]="masterMealList"
-      (editSender)="showEdit($event)"
-    ></meal-list>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6" id="new-meal-div">
+        <new-meal
+          (newMealSender)="addMeal($event)"
+        ></new-meal>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6" id="edit-meal-div">
+        <edit-meal
+            [childSelectedMeal]="masterSelectedMeal"
+            (finishedEditingSender)="finishedEditing()"
+          ></edit-meal>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6" id="list-meal-div">
+        <meal-list
+          [childMealList]="masterMealList"
+          (editSender)="showEdit($event)"
+        ></meal-list>
+      </div>
+    </div>
   </div>
   `
 })
@@ -43,7 +62,4 @@ export class AppComponent {
     this.masterMealList.push(newMealFromChild);
   }
 
-  consoleLog() {
-    console.log(this.masterSelectedMeal);
-  }
 }
