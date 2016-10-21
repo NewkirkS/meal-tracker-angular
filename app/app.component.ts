@@ -10,6 +10,9 @@ import { Meal } from './meal.model'
       (newMealSender)="addMeal($event)"
     ></new-meal>
     <button (click)="consoleLog()">Console</button>
+    <meal-list
+      [childMealList]="masterMealList"
+    ></meal-list>
   </div>
   `
 })
