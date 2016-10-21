@@ -7,17 +7,17 @@ import { Meal } from "./meal.model";
     <form>
       <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" #newName>
+        <input class="form-control" type="text" #newName>
       </div>
       <div class="form-group">
         <label for="calories">Calories:</label>
-        <input type="number" #newCalories>
+        <input class="form-control" type="number" #newCalories>
       </div>
       <div class="form-group">
-        <label for="details">Name:</label>
-        <input type="text" #newDetails>
+        <label for="details">Details:</label>
+        <input class="form-control" type="text" #newDetails>
       </div>
-      <button (click)="
+      <button class="btn btn-success" (click)="
         addClicked(newName.value, newCalories.value, newDetails.value);
         newName.value='';
         newCalories.value='';
@@ -29,7 +29,7 @@ import { Meal } from "./meal.model";
 
 export class NewMealComponent {
   @Output() newMealSender = new EventEmitter();
-  addMeal(name: string, calories: number, details: string) {
+  addClicked(name: string, calories: number, details: string) {
     var newMeal: Meal = new Meal(name, calories, details);
     this.newMealSender.emit(newMeal);
   }
