@@ -4,6 +4,13 @@ import { Meal } from "./meal.model";
 @Component ({
   selector: "meal-list",
   template: `
+    <div>
+      <select (change)="onChange($event.target.value)">
+        <option value="all">Show All</option>
+        <option value="high">High-Calorie Meals</option>
+        <option value="low">Low-Calorie Meals</option>
+      </select>
+    </div>
     <div *ngFor="let meal of childMealList">
       <hr>
       <h4>{{meal.name}}</h4>
